@@ -1,0 +1,17 @@
+language: cpp
+
+sudo: required
+dist: trusty
+
+install:
+    - sudo add-apt-repository -y   ppa:ubuntu-toolchain-r/test
+    - sudo add-apt-repository -y   "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
+    - sudo apt-get update     -qq
+    - sudo apt-get install    -qq  g++-4.9 mesa-common-dev fftw3-dev qt5-default fglrx opencl-headers
+
+script:
+    - cd ../
+    - find . -maxdepth 3
+    - bash fahbench/ci/travis/install-openmm.sh
+    - bash fahbench/ci/travis/install-fahbench.sh
+
