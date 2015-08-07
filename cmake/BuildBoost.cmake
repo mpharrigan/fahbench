@@ -2,6 +2,10 @@ include(ExternalProject)
 
 set(BOOST_COMPILE_OPTIONS "")
 
+if(${MAKE_WEB_GUI})
+    set(BOOST_COMPILE_OPTIONS ${BOOST_COMPILE_OPTIONS} "--with-thread")
+endif()
+
 IF(${WIN32})
     set(SHELL_SCRIPT_EXT "bat")
     IF(CMAKE_SIZEOF_VOID_P EQUAL 8)
@@ -41,6 +45,11 @@ set(BOOST_LIBRARIES
     "${BOOST_LIBPREFIX}program_options${BOOST_LIBSUFFIX}"
     "${BOOST_LIBPREFIX}filesystem${BOOST_LIBSUFFIX}"
     "${BOOST_LIBPREFIX}system${BOOST_LIBSUFFIX}"
+)
+
+set(BOOST_WEB_LIBRARIES
+    "${BOOST_LIBPREFIX}system${BOOST_LIBSUFFIX}"
+    "${BOOST_LIBPREFIX}thread${BOOST_LIBSUFFIX}"
 )
 
 # Disable "autolink" of boost

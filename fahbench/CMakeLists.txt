@@ -59,6 +59,7 @@ target_link_libraries(fahbench
 # Make executables
 add_subdirectory(gui)
 add_subdirectory(cmd)
+add_subdirectory(web)
 
 # Install
 INSTALL(TARGETS fahbench
