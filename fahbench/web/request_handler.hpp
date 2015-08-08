@@ -13,6 +13,9 @@
 
 #include <string>
 
+#include "ApiHandler.h"
+#include "VersionHandler.h"
+
 namespace http {
 namespace server {
 
@@ -41,7 +44,7 @@ private:
   static bool url_decode(const std::string& in, std::string& out);
   
   void handle_file_request(const std::string & request_path, reply & rep);
-  void handle_rest_request(const request & req, reply & rep);
+  void handle_rest_request(const std::string & request_path, http::server::reply & rep);
 };
 
 } // namespace server

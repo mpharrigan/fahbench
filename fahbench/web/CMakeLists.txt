@@ -4,6 +4,7 @@ set(MAKE_WEB_GUI ON CACHE BOOL "Make web gui")
 if(${MAKE_WEB_GUI})
 add_executable(FAHBench-web WIN32
     web-main.cpp
+    VersionHandler.cpp
     connection.cpp
     connection_manager.cpp
     mime_types.cpp
