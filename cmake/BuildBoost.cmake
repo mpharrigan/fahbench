@@ -47,10 +47,5 @@ set(BOOST_LIBRARIES
     "${BOOST_LIBPREFIX}system${BOOST_LIBSUFFIX}"
 )
 
-set(BOOST_WEB_LIBRARIES
-    "${BOOST_LIBPREFIX}system${BOOST_LIBSUFFIX}"
-    "${BOOST_LIBPREFIX}thread${BOOST_LIBSUFFIX}"
-)
-
 # Disable "autolink" of boost
 add_definitions("-DBOOST_ALL_NO_LIB")
