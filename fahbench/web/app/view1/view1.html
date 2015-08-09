@@ -1,6 +1,6 @@
 <div class="row">
 
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         <table class="table table-striped">
             <tr>
                 <th>Device Name</th>
@@ -19,5 +19,47 @@
                 <td>{{device.platform_version}}</td>
             </tr>
         </table>
+    </div>
+
+    <div class="col-sm-6">
+        <table class="table table-striped">
+            <tr>
+                <th>WU</th>
+                <th>Full Name</th>
+                <th>Description</th>
+                <th>Step</th>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-sm-12">
+        <table class="table table-striped">
+            <tr>
+                <th>Device</th>
+                <th>Options</th>
+                <th>Score</th>
+            </tr>
+
+        </table>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-10">
+        <div class="progress" style="margin-top: 0.5em; margin-bottom:0.5em;">
+            <div class="progress-bar progress-bar-striped active"
+                 role="progressbar" aria-valuenow="60"
+                 aria-valuemin="0" aria-valuemax="100"
+                 style="width: 60%;">
+                <span class="sr-only">60% Complete</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-default">Start</button>
     </div>
 </div>
