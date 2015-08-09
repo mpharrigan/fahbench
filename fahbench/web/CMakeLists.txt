@@ -5,6 +5,7 @@ if(${MAKE_WEB_GUI})
 add_executable(FAHBench-web WIN32
     web-main.cpp
     VersionHandler.cpp
+    DefaultHandler.cpp
     connection.cpp
     connection_manager.cpp
     mime_types.cpp

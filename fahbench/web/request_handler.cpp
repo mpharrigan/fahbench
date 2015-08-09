@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <type_traits>
 #include "mime_types.hpp"
 #include "reply.hpp"
 #include "request.hpp"
@@ -27,15 +28,26 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
+
+
+#include "VersionHandler.h"
+#include "DefaultHandler.h"
+
 namespace http {
 namespace server {
 
 namespace ba = boost::algorithm;
 namespace pt = boost::property_tree;
 
+
 request_handler::request_handler(const std::string & doc_root)
-    : doc_root_(doc_root) {
+    : doc_root_(doc_root)
+    , handlers_ {
+    {"version", new VersionHandler()},
+    {"default", new DefaultHandler()}
 }
+
+{}
 
 
 void request_handler::handle_file_request(const std::string & request_path, reply & rep) {
@@ -84,8 +96,12 @@ void request_handler::handle_rest_request(const std::string & request_path, repl
 
     pt::ptree tree;
 
-    VersionHandler version_handler;
-    version_handler.handle_api(parts.begin() + 2, parts.cend(), tree);
+    auto lookup = parts[2];
+    if (handlers_.count(lookup) == 0) {
+        lookup = "default";
+    }
+    auto handle = handlers_.at(lookup);
+    handle->handle_api(parts.begin() + 2, parts.cend(), tree);
 
     rep.status = reply::ok;
     std::stringstream content_ss;

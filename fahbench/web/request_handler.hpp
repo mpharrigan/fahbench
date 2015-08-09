@@ -12,13 +12,16 @@
 #define HTTP_REQUEST_HANDLER_HPP
 
 #include <string>
+#include <map>
+
 
 #include "ApiHandler.h"
-#include "VersionHandler.h"
 
 namespace http {
 namespace server {
+    
 
+   
 struct reply;
 struct request;
 
@@ -38,6 +41,7 @@ public:
 private:
   /// The directory containing the files to be served.
   std::string doc_root_;
+  const std::map<std::string, ApiHandler *> handlers_;
 
   /// Perform URL-decoding on a string. Returns false if the encoding was
   /// invalid.
