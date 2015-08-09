@@ -7,13 +7,17 @@ add_executable(FAHBench-web WIN32
     VersionHandler.cpp
     DeviceHandler.cpp
     DefaultHandler.cpp
-    connection.cpp
-    connection_manager.cpp
-    mime_types.cpp
-    reply.cpp
     request_handler.cpp
-    request_parser.cpp
-    server.cpp
+    
+    # Server
+    server/connection.cpp
+    server/connection_manager.cpp
+    server/mime_types.cpp
+    server/reply.cpp
+    server/request_parser.cpp
+    server/server.cpp
+    
+    # Icon
     FahIcon.rc
 )
 

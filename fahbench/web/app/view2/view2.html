@@ -1,1 +1,22 @@
-<p>This is the partial for view 2.</p>
+<div class="row">
+    <div class="col-sm-6">
+        <h1>FAHBench
+            <small>GPU Benchmarking</small>
+        </h1>
+        <p>
+            FAHBench evaluates the performance of OpenCL devices (like GPUs)
+            using the OpenMM molecular dynamics program. The computational core
+            of FAHBench is nearly identical to Folding@home scientific "cores"
+            that allow donors from around the world to donate computations to
+            solving novel problems in biophysics. A higher score in FAHBench
+            means more effective computations for Folding@home.
+        </p>
+
+        <p>FAHBench is maintained by Matthew Harrigan at Stanford University</p>
+
+        <h4>FAHBench: <span ng-bind="version.fahbench.version_string"></span>
+        </h4>
+        <h4>OpenMM: <span ng-bind="version.openmm"></span></h4>
+        <h4><a href="https://github.com/pandegroup/fahbench">Source</a></h4>
+    </div>
+</div>

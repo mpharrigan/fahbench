@@ -17,9 +17,9 @@
 #include <string>
 #include <vector>
 #include <type_traits>
-#include "mime_types.hpp"
-#include "reply.hpp"
-#include "request.hpp"
+#include "server/mime_types.hpp"
+#include "server/reply.hpp"
+#include "server/request.hpp"
 
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/algorithm/string/split.hpp>

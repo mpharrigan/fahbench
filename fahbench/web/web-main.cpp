@@ -14,7 +14,7 @@
 #include <string>
 #include <boost/asio.hpp>
 
-#include "server.hpp"
+#include "server/server.hpp"
 #include "../Utils.h"
 
 int main(int argc, char * argv[]) {
