@@ -8,6 +8,7 @@ add_executable(FAHBench-web WIN32
     DeviceHandler.cpp
     DefaultHandler.cpp
     SimulationHandler.cpp
+    WebUpdater.cpp
     request_handler.cpp
     
     # Server
