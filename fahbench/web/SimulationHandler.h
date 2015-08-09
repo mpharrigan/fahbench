@@ -21,6 +21,8 @@ private:
     WebUpdater * _web_updater;
     std::thread t;
 
+    void launch();
+
 
 public:
     explicit SimulationHandler();
