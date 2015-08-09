@@ -1,6 +1,23 @@
+<div class="row">
 
-<div>
-<p>This is the partial for view 1.</p>
-
-<span ng-bind="hi_mom"></span>
+    <div class="col-sm-4">
+        <table class="table table-striped">
+            <tr>
+                <th>Device Name</th>
+                <th>Platform</th>
+                <th>Device Id</th>
+                <th>Platform Id</th>
+                <th>Device Version</th>
+                <th>Platform Version</th>
+            </tr>
+            <tr ng-repeat="device in devices">
+                <td>{{device.name}}</td>
+                <td>{{device.platform}}</td>
+                <td>{{device.device_id}}</td>
+                <td>{{device.platform_id}}</td>
+                <td>{{device.device_version}}</td>
+                <td>{{device.platform_version}}</td>
+            </tr>
+        </table>
+    </div>
 </div>

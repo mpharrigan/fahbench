@@ -31,6 +31,7 @@
 
 
 #include "VersionHandler.h"
+#include "DeviceHandler.h"
 #include "DefaultHandler.h"
 
 namespace http {
@@ -44,6 +45,7 @@ request_handler::request_handler(const std::string & doc_root)
     : doc_root_(doc_root)
     , handlers_ {
     {"version", new VersionHandler()},
+    {"devices", new DeviceHandler()},
     {"default", new DefaultHandler()}
 }
 

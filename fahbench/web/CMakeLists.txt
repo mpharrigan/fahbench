@@ -5,6 +5,7 @@ if(${MAKE_WEB_GUI})
 add_executable(FAHBench-web WIN32
     web-main.cpp
     VersionHandler.cpp
+    DeviceHandler.cpp
     DefaultHandler.cpp
     connection.cpp
     connection_manager.cpp
@@ -30,6 +31,7 @@ INSTALL(FILES
     app/app.js
     app/bower_components/angular/angular.js
     app/bower_components/angular-route/angular-route.js
+    app/bower_components/angular-resource/angular-resource.js
     app/bower_components/bootstrap/dist/js/bootstrap.js
     app/bower_components/jquery/dist/jquery.js
     DESTINATION app/js
