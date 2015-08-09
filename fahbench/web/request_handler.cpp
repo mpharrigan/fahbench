@@ -12,11 +12,7 @@
 
 #include "request_handler.hpp"
 #include <fstream>
-#include <sstream>
 #include <iostream>
-#include <string>
-#include <vector>
-#include <type_traits>
 #include "server/mime_types.hpp"
 #include "server/reply.hpp"
 #include "server/request.hpp"
@@ -25,13 +21,11 @@
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string/classification.hpp>
 
-#include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
-
-
 
 #include "VersionHandler.h"
 #include "DeviceHandler.h"
+#include "SimulationHandler.h"
 #include "DefaultHandler.h"
 
 namespace http {
@@ -46,6 +40,7 @@ request_handler::request_handler(const std::string & doc_root)
     , handlers_ {
     {"version", new VersionHandler()},
     {"devices", new DeviceHandler()},
+    {"simulation", new SimulationHandler()},
     {"default", new DefaultHandler()}
 }
 

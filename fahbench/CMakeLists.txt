@@ -101,3 +101,5 @@ if(${WIN32})
     DESTINATION bin)
 endif(${WIN32})
 
+# This is a hack to get CLion to install
+ADD_CUSTOM_TARGET(run_install COMMAND ${CMAKE_MAKE_PROGRAM} install)
