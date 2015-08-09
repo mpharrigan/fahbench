@@ -37,6 +37,8 @@ public:
 
   /// Handle a request and produce a reply.
   void handle_request(const request& req, reply& rep);
+  
+  virtual ~request_handler();
 
 private:
   /// The directory containing the files to be served.

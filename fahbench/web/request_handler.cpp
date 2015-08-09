@@ -167,5 +167,13 @@ bool request_handler::url_decode(const std::string & in, std::string & out) {
     return true;
 }
 
+request_handler::~request_handler() {
+    std::cout << "Cleaning up handlers" << std::endl;
+    for (auto & it : handlers_) {
+        delete(it.second);
+    }
+}
+
+
 } // namespace server
 } // namespace http
