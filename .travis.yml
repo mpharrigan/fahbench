@@ -13,4 +13,6 @@ script:
     - cd ../
     - bash fahbench/ci/travis/install-openmm.sh
     - bash fahbench/ci/travis/install-fahbench.sh
+    - ~/fahbench/bin/FAHBench-cmd -hlvd
+    - ~/fahbench/bin/FAHBench-cmd
 
