@@ -11,7 +11,6 @@ install:
 
 script:
     - cd ../
-    - find . -maxdepth 3
     - bash fahbench/ci/travis/install-openmm.sh
     - bash fahbench/ci/travis/install-fahbench.sh
 
